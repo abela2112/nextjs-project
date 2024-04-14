@@ -38,7 +38,7 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <Link href="/">
-        <div className={styles.logo}>JosephBlog</div>
+        <div className={styles.logo}>Bela</div>
       </Link>
 
       <div className={styles.links}>
@@ -52,7 +52,7 @@ const NavBar = () => {
             {link.title}
           </Link>
         ))}
-        <button className={styles.logout}>Logout</button>
+        <button className={styles.logout}>Login</button>
       </div>
     </div>
   );

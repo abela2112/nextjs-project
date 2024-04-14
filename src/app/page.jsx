@@ -4,7 +4,7 @@ import Button from "@/Components/Button/Button";
 import Hero from "public/hero.png";
 
 export const metadata = {
-  title: "Jossy Post",
+  title: "Bela's Post",
   description: "This is nextjs website for blog post",
 };
 

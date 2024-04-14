@@ -1,18 +1,23 @@
-import React from "react";
-import styles from "./page.module.css";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import styles from "./page.module.css";
+import { data } from "@/utils/data";
 
 async function getPosts() {
-  const res = await fetch("http://localhost:3000/api/post", {
+  try {
+    const res = await fetch("http://localhost:3000/api/post", {
     cache: "no-store",
   });
 
   if (!res.ok) {
-    throw new Error("Error while fetching data");
+    return null
   }
   return res.json();
+  } catch (error) {
+    console.log(error);
+  }
 }
+
 
 export const metadata = {
   title: "Enjoy blogs",
@@ -20,7 +25,8 @@ export const metadata = {
 };
 
 const Blog = async () => {
-  const posts = await getPosts();
+  const posts = data;
+  if (!posts) return null
   return (
     <div className={styles.container}>
       {posts.map((post) => (
@@ -29,6 +35,7 @@ const Blog = async () => {
           className={styles.itemContainer}
           key={post._id}
         >
+
           <div className={styles.imageContainer}>
             <Image
               src={post.img}
