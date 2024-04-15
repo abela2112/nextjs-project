@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Button from "@/Components/Button/Button";
-import Hero from "public/hero.png";
+import Hero from "../../public/hero.png";
 
 export const metadata = {
   title: "Bela's Post",
